@@ -25,8 +25,8 @@ class MegaSenaApp(MDApp):
         Builder.load_file("kv/stats_screen.kv")
 
         sm = WindowManager()
-        sm.add_widget(SearchScreen(name="search"))
         sm.add_widget(MainScreen(name="main"))
+        sm.add_widget(SearchScreen(name="search"))
         sm.add_widget(StatsScreen(name="stats"))
 
         return sm

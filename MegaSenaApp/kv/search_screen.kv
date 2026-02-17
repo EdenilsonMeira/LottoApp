@@ -4,7 +4,7 @@
         Rectangle:
             pos: self.pos
             size: self.size
-            source: "assets/Search Page.png"
+            source: "assets/Background.png"
 
     # 🔵 TOP CONTENT
     MDBoxLayout:
@@ -33,10 +33,12 @@
             pos_hint: {"center_x": 0.5}
             md_bg_color: 1, 1, 1, 1
             elevation: 2
+       
         Widget:
             size_hint_y: None
             height: 20
-
+        
+        # This boxlayout is on the top of the card
         BoxLayout:
             orientation: "vertical"
             padding: 80
@@ -95,57 +97,97 @@
             size_hint: 0.9, None
             height: 380
             pos_hint: {"center_x": 0.5}
-            md_bg_color: 1, 0, 0, 0.2
+            md_bg_color: 1, 1, 1, 1
             elevation: 2
+        
+        #Include another boxlayout here
+        ########
+        
         # Third card
         MDCard:
             size_hint: 0.9, None
             height: 380
             pos_hint: {"center_x": 0.5}
-            md_bg_color: 1, 0, 0, 0.2
+            md_bg_color: 1, 1, 1, 1
             elevation: 2
-      
         
+        #Include another boxlayout here
+        ########
+    
 
-    # 🔵 LEFT BUTTON
-    MDRaisedButton:
-        text: "Gerar Números"
-        font_size: 48
-        size_hint: None, None
-        size: 250, 80
-        pos_hint: {"x": 0.05, "y": 0.05}
-        elevation: 0
-        on_release: root.manager.current = "main"
+    # Buttons
+    BoxLayout:
+        orientation: "vertical"
+        padding: 350
+        
+        # Search Button (overlapping the cards)     
+        MDRaisedButton:
+            text: "Pesquisar"
+            font_size: 48
+            size_hint: None, None
+            size: 250,80
+            # pos_hint: {"x": 0.05, "y": 0.05}
+            elevation: 0
+            on_release: root.manager.current = "main"
 
-        md_bg_color: 0, 0, 0, 0
-        text_color: 1, 1, 1, 1
+            md_bg_color: 0, 0, 0, 0
+            text_color: 1, 1, 1, 1
 
-        canvas.before:
-            Color:
-                rgba: 0.08, 0.38, 0.9, 1
-            RoundedRectangle:
-                pos: self.pos
-                size: self.size
-                radius: [45]
+            canvas.before:
+                Color:
+                    rgba: 0.08, 0.38, 0.9, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
 
+    BoxLayout:
+        orientation: "horizontal"
+        padding: 20
+        spacing: 100
+        
+        # 🔵 LEFT BUTTON
+        MDRaisedButton:
+            text: "Gerar Números"
+            font_size: 48
+            size_hint: None, None
+            size: 250, 80
+            pos_hint: {"x": 0.05, "y": 0.05}
+            elevation: 0
+            on_release: root.manager.current = "main"
 
-    # 🔵 RIGHT BUTTON
-    MDRaisedButton:
-        text: "Estatísticas"
-        font_size: 48
-        size_hint: None, None
-        size: 250, 80
-        pos_hint: {"right": 0.95, "y": 0.05}
-        elevation: 0
-        on_release: root.manager.current = "stats"
+            md_bg_color: 0, 0, 0, 0
+            text_color: 1, 1, 1, 1
 
-        md_bg_color: 0, 0, 0, 0
-        text_color: 1, 1, 1, 1
+            canvas.before:
+                Color:
+                    rgba: 0.08, 0.38, 0.9, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
+        # This widget is used to maintain the right space between the two buttons
+        Widget:
+            size_hint_x: None
+            width: 10
 
-        canvas.before:
-            Color:
-                rgba: 0.08, 0.38, 0.9, 1
-            RoundedRectangle:
-                pos: self.pos
-                size: self.size
-                radius: [45]
+        # 🔵 RIGHT BUTTON
+        MDRaisedButton:
+            text: "Estatísticas"
+            font_size: 48
+            size_hint: None, None
+            size: 250, 80
+            pos_hint: {"right": 0.95, "y": 0.05}
+            elevation: 0
+            on_release: root.manager.current = "stats"
+
+            md_bg_color: 0, 0, 0, 0
+            text_color: 1, 1, 1, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0.08, 0.38, 0.9, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
