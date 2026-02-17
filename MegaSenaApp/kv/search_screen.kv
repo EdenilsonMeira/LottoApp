@@ -4,74 +4,148 @@
         Rectangle:
             pos: self.pos
             size: self.size
-            source: "assets/Background.png"
+            source: "assets/Search Page.png"
 
-    FloatLayout:
+    # 🔵 TOP CONTENT
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 20, 20, 20, 20
+        spacing: 20
+        size_hint: 1, None
+        height: self.minimum_height
+        pos_hint: {"top": 1}
 
-        # 🔵 TOP CONTENT
-        MDBoxLayout:
+        Widget:
+            size_hint_y: None
+            height: 20
+
+        Image:
+            source: "assets/pesquisa.png"
+            size_hint_y: None
+            height: 180
+            allow_stretch: True
+            keep_ratio: True
+
+        # First card 
+        MDCard:
+            size_hint: 0.9, None
+            height: 500
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 1, 1, 1, 1
+            elevation: 2
+        Widget:
+            size_hint_y: None
+            height: 20
+
+        BoxLayout:
             orientation: "vertical"
-            padding: 20, 20, 20, 20
-            spacing: 20
-            size_hint: 1, None
-            height: self.minimum_height
-            pos_hint: {"top": 1}
+            padding: 80
+
+            MDLabel:
+                text: "Buscar Datas de Sorteio"
+                halign: "left"
+                valign: "top"
+                text_size: self.size
+                theme_text_color: "Primary"
+                text_color: 1, 1, 1, 1
+                font_size: dp(16)
+
+            Widget:
+                size_hint_y: None
+                height: 60
+
+            MDLabel:
+                text: "Entrar data de pesquisa (dd/mm/aaaa):"
+                halign: "left"
+                valign: "top"
+                text_size: self.size
+                theme_text_color: "Primary"
+                text_color: 1, 1, 1, 1
+                font_size: dp(14)
+
+            Widget:
+                size_hint_y: None
+                height: 20
+            
+            MDTextField:
+                hint_text: "dd/mm/aaaa"
 
             Widget:
                 size_hint_y: None
                 height: 20
 
-            Image:
-                source: "assets/pesquisa.png"
-                size_hint_y: None
-                height: 180
-                allow_stretch: True
-                keep_ratio: True
-
+            MDLabel:
+                text: "Pesquisar por Resultados"
+                halign: "left"
+                valign: "top"
+                text_size: self.size
+                theme_text_color: "Primary"
+                text_color: 1, 1, 1, 1
+                font_size: dp(14)
+            
             Widget:
                 size_hint_y: None
                 height: 20
+            
+            MDTextField:
+                hint_text: "XX XX XX XX XX XX"  
+
+        # Second card
+        MDCard:
+            size_hint: 0.9, None
+            height: 380
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 1, 0, 0, 0.2
+            elevation: 2
+        # Third card
+        MDCard:
+            size_hint: 0.9, None
+            height: 380
+            pos_hint: {"center_x": 0.5}
+            md_bg_color: 1, 0, 0, 0.2
+            elevation: 2
+      
+        
+
+    # 🔵 LEFT BUTTON
+    MDRaisedButton:
+        text: "Gerar Números"
+        font_size: 48
+        size_hint: None, None
+        size: 250, 80
+        pos_hint: {"x": 0.05, "y": 0.05}
+        elevation: 0
+        on_release: root.manager.current = "main"
+
+        md_bg_color: 0, 0, 0, 0
+        text_color: 1, 1, 1, 1
+
+        canvas.before:
+            Color:
+                rgba: 0.08, 0.38, 0.9, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [45]
 
 
-        # 🔵 LEFT BUTTON
-        MDRaisedButton:
-            text: "Gerar Números"
-            font_size: 48
-            size_hint: None, None
-            size: 250, 80
-            pos_hint: {"x": 0.05, "y": 0.05}
-            elevation: 0
-            on_release: root.manager.current = "main"
+    # 🔵 RIGHT BUTTON
+    MDRaisedButton:
+        text: "Estatísticas"
+        font_size: 48
+        size_hint: None, None
+        size: 250, 80
+        pos_hint: {"right": 0.95, "y": 0.05}
+        elevation: 0
+        on_release: root.manager.current = "stats"
 
-            md_bg_color: 0, 0, 0, 0
-            text_color: 1, 1, 1, 1
+        md_bg_color: 0, 0, 0, 0
+        text_color: 1, 1, 1, 1
 
-            canvas.before:
-                Color:
-                    rgba: 0.08, 0.38, 0.9, 1
-                RoundedRectangle:
-                    pos: self.pos
-                    size: self.size
-                    radius: [45]
-
-
-        # 🔵 RIGHT BUTTON
-        MDRaisedButton:
-            text: "Estatísticas"
-            font_size: 48
-            size_hint: None, None
-            size: 250, 80
-            pos_hint: {"right": 0.95, "y": 0.05}
-            elevation: 0
-            on_release: root.manager.current = "stats"
-
-            md_bg_color: 0, 0, 0, 0
-            text_color: 1, 1, 1, 1
-
-            canvas.before:
-                Color:
-                    rgba: 0.08, 0.38, 0.9, 1
-                RoundedRectangle:
-                    pos: self.pos
-                    size: self.size
-                    radius: [45]
+        canvas.before:
+            Color:
+                rgba: 0.08, 0.38, 0.9, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [45]
