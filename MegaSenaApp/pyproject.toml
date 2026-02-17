@@ -1,0 +1,17 @@
+[project]
+name = "seisdasorte"
+version = "0.1.0"
+description = "Mega Sena App"
+authors = [
+    {name = "STARS Inc."}
+]
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "kivy (>=2.3.1,<3.0.0)",
+    "kivymd (>=1.2.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,172 @@
+#:import MDCard kivymd.uix.card.MDCard
+
+<BallLabel@MDLabel>:
+    size_hint: None, None
+    size: 140, 140
+    halign: "center"
+    valign: "middle"
+    text_size: self.size
+    theme_text_color: "Custom"
+    text_color: 0.25, 0.25, 0.75, 1
+    font_style: "H5"
+
+    canvas.before:
+        Color:
+            rgba: 0.92, 0.94, 1, 1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<MainScreen>:
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "assets/background.png"
+
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 20, 40, 20, 20
+        spacing: 25
+
+        # 🔵 TITLE
+        Image:
+            source: "assets/title.png"
+            size_hint_y: None
+            height: 280 # Size of the title image
+            allow_stretch: True
+            keep_ratio: True
+
+
+        # 🔵 SMALL SPACER
+        Widget:
+            size_hint_y: None
+            height: 20
+
+        # 🔵 CARD
+        MDCard:
+            size_hint: 0.9, None
+            height: 600
+            pos_hint: {"center_x": 0.5}
+            radius: [30]
+            elevation: 6
+            padding: 220 # Adjust horizontal position of balls
+
+            FloatLayout:
+            
+                MDGridLayout:
+                    cols: 3
+                    spacing: 85
+                    size_hint: None, None
+                    width: 600
+                    height: 400
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                    BallLabel:
+                        text: str(root.numbers[0])
+                    BallLabel:
+                        text: str(root.numbers[1])
+                    BallLabel:
+                        text: str(root.numbers[2])
+                    BallLabel:
+                        text: str(root.numbers[3])
+                    BallLabel:
+                        text: str(root.numbers[4])
+                    BallLabel:
+                        text: str(root.numbers[5])
+
+        # 🔵 FLEXIBLE SPACER (this pushes button down naturally)
+        Widget:
+            size_hint_y: 1
+
+
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: 220
+            padding: 20
+
+        MDLabel:
+            id: result_label
+            text: ""
+            halign: "center"
+            font_style: "H6"
+            theme_text_color: "Primary"
+            # text_color: 0.25, 0.25, 0.75, 1
+
+        Widget:
+            size_hint_y: 1.5   # pushes everything below upward
+
+                # 🔵 Generate A.I. Numbers Button
+        MDRaisedButton:
+            text: "Gerar Números com I.A."
+            font_size: 48
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            height: 255
+            size_hint_y: 0.6
+            on_release: root.generate_ai_predicted()
+
+            elevation: 0
+
+            md_bg_color: 0, 0, 0, 0  # remove default background
+            text_color: 1, 1, 1, 1
+            canvas.before:
+                Color:
+                    rgba: 0.42, 0.25, 0.73, 1
+                
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
+
+
+        # 🔵 Generate Frequent Numbers Button
+        MDRaisedButton:
+            text: "Gerar Números Frequentes"
+            font_size: 48
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            height: 255
+            size_hint_y: 0.6
+            on_release: root.generate_frequent()
+
+            elevation: 0
+
+            md_bg_color: 0, 0, 0, 0  # remove default background
+            text_color: 1, 1, 1, 1
+            canvas.before:
+                Color:
+                    rgba: 0.42, 0.25, 0.73, 1
+                
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
+
+        # 🔵 Generate Random Numbers
+        MDRaisedButton:
+            text: "Gerar Números Aleatórios"
+            font_size: 48
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            height: 255
+            size_hint_y: 0.6
+            on_release: root.generate_random()
+
+            elevation: 0
+
+            md_bg_color: 0, 0, 0, 0  # remove default background
+            text_color: 1, 1, 1, 1
+            canvas.before:
+                Color:
+                    rgba: 0.42, 0.25, 0.73, 1
+                
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
+        
+        Widget:
+            size_hint_y: 1   # pushes everything below upward

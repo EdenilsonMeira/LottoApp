@@ -1,0 +1,159 @@
+<svg width="1300" height="900" viewBox="0 0 1300 900" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+  <!-- Background Gradient -->
+  <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#EEF2FF"></stop>
+    <stop offset="100%" stop-color="#E0F2FE"></stop>
+  </linearGradient>
+
+  <!-- Button Gradient -->
+  <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#4F46E5"></stop>
+    <stop offset="100%" stop-color="#8B5CF6"></stop>
+  </linearGradient>
+
+  <!-- Card Shadow -->
+  <filter id="cardShadow">
+    <feDropShadow dx="0" dy="8" stdDeviation="20" flood-opacity="0.08"></feDropShadow>
+  </filter>
+</defs>
+
+<!-- ================================================= -->
+<!-- GENERATOR SCREEN -->
+<!-- ================================================= -->
+
+<g transform="translate(0,0)">
+  <rect width="390" height="844" rx="32" fill="url(#bgGrad)"></rect>
+
+  <text x="195" y="90" text-anchor="middle" font-size="28" font-weight="700" font-family="Arial" fill="#111827">
+  LuckySix
+  </text>
+
+  <text x="195" y="120" text-anchor="middle" font-size="14" font-family="Arial" fill="#6B7280">
+  Generate your next numbers
+  </text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="160" width="342" height="260" rx="24" fill="#FFFFFF"></rect>
+  </g>
+
+  <!-- Number Circles -->
+  <g fill="#E0E7FF">
+    <circle cx="110" cy="230" r="32"></circle>
+    <circle cx="195" cy="230" r="32"></circle>
+    <circle cx="280" cy="230" r="32"></circle>
+    <circle cx="110" cy="310" r="32"></circle>
+    <circle cx="195" cy="310" r="32"></circle>
+    <circle cx="280" cy="310" r="32"></circle>
+  </g>
+
+  <g fill="#4F46E5" font-size="22" font-weight="700" text-anchor="middle" font-family="Arial">
+    <text x="110" y="238">08</text>
+    <text x="195" y="238">17</text>
+    <text x="280" y="238">23</text>
+    <text x="110" y="318">31</text>
+    <text x="195" y="318">42</text>
+    <text x="280" y="318">49</text>
+  </g>
+
+  <rect x="24" y="460" width="342" height="58" rx="18" fill="url(#btnGrad)"></rect>
+
+  <text x="195" y="495" text-anchor="middle" font-size="18" font-weight="600" font-family="Arial" fill="#FFFFFF">
+  Generate Numbers
+  </text>
+</g>
+
+<!-- ================================================= -->
+<!-- SEARCH SCREEN -->
+<!-- ================================================= -->
+
+<g transform="translate(430,0)">
+  <rect width="390" height="844" rx="32" fill="url(#bgGrad)"></rect>
+
+  <text x="195" y="90" text-anchor="middle" font-size="26" font-weight="700" font-family="Arial" fill="#111827">
+  Search
+  </text>
+
+  <!-- Search by Date Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="140" width="342" height="200" rx="24" fill="#FFFFFF"></rect>
+  </g>
+
+  <text x="48" y="175" font-size="16" font-weight="600" font-family="Arial" fill="#111827">
+  Search Past Draw
+  </text>
+
+  <rect x="48" y="200" width="294" height="44" rx="12" fill="#F3F4F6"></rect>
+
+  <rect x="48" y="260" width="294" height="44" rx="14" fill="url(#btnGrad)"></rect>
+
+  <text x="195" y="288" text-anchor="middle" font-size="14" font-weight="600" font-family="Arial" fill="#FFFFFF">
+  Find Draw
+  </text>
+
+  <!-- Check Number Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="380" width="342" height="220" rx="24" fill="#FFFFFF"></rect>
+  </g>
+
+  <text x="48" y="415" font-size="16" font-weight="600" font-family="Arial" fill="#111827">
+  Check Number History
+  </text>
+
+  <rect x="48" y="440" width="294" height="44" rx="12" fill="#F3F4F6"></rect>
+
+  <rect x="48" y="500" width="294" height="44" rx="14" fill="url(#btnGrad)"></rect>
+
+  <text x="195" y="528" text-anchor="middle" font-size="14" font-weight="600" font-family="Arial" fill="#FFFFFF">
+  Check Number
+  </text>
+</g>
+
+<!-- ================================================= -->
+<!-- STATS SCREEN -->
+<!-- ================================================= -->
+
+<g transform="translate(860,0)">
+  <rect width="390" height="844" rx="32" fill="url(#bgGrad)"></rect>
+
+  <text x="195" y="90" text-anchor="middle" font-size="26" font-weight="700" font-family="Arial" fill="#111827">
+  Stats
+  </text>
+
+  <!-- Hot / Cold Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="130" width="342" height="140" rx="24" fill="#FFFFFF"></rect>
+  </g>
+
+  <text x="48" y="165" font-size="14" font-weight="600" fill="#4F46E5" font-family="Arial">
+  🔥 Hot: 17 23 08
+  </text>
+
+  <text x="48" y="195" font-size="14" fill="#6B7280" font-family="Arial">
+  ❄ Cold: 05 41 12
+  </text>
+
+  <!-- Heatmap Card -->
+  <g filter="url(#cardShadow)">
+    <rect x="24" y="300" width="342" height="260" rx="24" fill="#FFFFFF"></rect>
+  </g>
+
+  <text x="48" y="330" font-size="16" font-weight="600" font-family="Arial" fill="#111827">
+  Frequency Heatmap
+  </text>
+
+  <!-- Sample Heatmap Row -->
+  <g font-size="10" font-family="Arial" text-anchor="middle" fill="#FFFFFF">
+    <rect x="48" y="360" width="32" height="32" rx="6" fill="#A5B4FC"></rect>
+    <text x="64" y="380">1</text>
+
+    <rect x="88" y="360" width="32" height="32" rx="6" fill="#6366F1"></rect>
+    <text x="104" y="380">2</text>
+
+    <rect x="128" y="360" width="32" height="32" rx="6" fill="#4F46E5"></rect>
+    <text x="144" y="380">3</text>
+  </g>
+</g>
+
+</svg>
