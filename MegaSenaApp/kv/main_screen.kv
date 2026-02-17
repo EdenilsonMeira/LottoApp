@@ -170,3 +170,27 @@
         
         Widget:
             size_hint_y: 1   # pushes everything below upward
+
+        MDRaisedButton:
+            text: "Pesquisa"
+            font_size: 48
+            size_hint_x: 0.9
+            pos_hint: {"center_x": 0.5}
+            height: 255
+            size_hint_y: 0.6
+            on_release:
+
+            elevation: 0
+
+            md_bg_color: 0, 0, 0, 0  # remove default background
+            text_color: 1, 1, 1, 1
+            canvas.before:
+                Color:
+                    rgba: 0.42, 0.25, 0.73, 1
+                
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
+            # app.root.current = "search"
+

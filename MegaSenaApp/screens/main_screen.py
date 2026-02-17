@@ -24,4 +24,4 @@ class MainScreen(Screen):
         # Exemplo de números previstos por IA (você pode substituir por dados reais)
         ai_predicted_numbers = [5, 15, 25, 35, 45, 55]
         self.numbers = sorted(random.sample(ai_predicted_numbers, 6))
-        self.ids.result_label.text = "Números previstos por IA"
+        self.ids.result_label.text = "Números previstos por I.A."
