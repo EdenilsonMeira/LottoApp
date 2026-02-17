@@ -17,6 +17,10 @@
             height: self.minimum_height
             pos_hint: {"top": 1}
 
+            Widget:
+                size_hint_y: None
+                height: 20
+
             Image:
                 source: "assets/pesquisa.png"
                 size_hint_y: None
@@ -44,7 +48,7 @@
 
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 RoundedRectangle:
                     pos: self.pos
                     size: self.size
@@ -66,7 +70,7 @@
 
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 RoundedRectangle:
                     pos: self.pos
                     size: self.size

@@ -23,7 +23,7 @@
         Rectangle:
             pos: self.pos
             size: self.size
-            source: "assets/Main Page.png"
+            source: "assets/Background.png"
 
 
     MDBoxLayout:
@@ -31,11 +31,22 @@
         padding: 20, 40, 20, 20
         spacing: 25
 
+        Widget:
+            size_hint_y: None
+            height: 20
+
+
         # 🔵 TITLE
+        # MDLabel:
+        #     text: "Gerador Mega Play"
+        #     halign: "center"
+        #     font_style: "H3"
+        #     theme_text_color: "Primary"
+        #     text_color: 0.25, 0.25, 0.75, 1
         Image:
             source: "assets/title.png"
             size_hint_y: None
-            height: 280 # Size of the title image
+            height: 300 # Size of the title image
             allow_stretch: True
             keep_ratio: True
 
@@ -113,7 +124,7 @@
             text_color: 1, 1, 1, 1
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 
                 RoundedRectangle:
                     pos: self.pos
@@ -137,7 +148,7 @@
             text_color: 1, 1, 1, 1
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 
                 RoundedRectangle:
                     pos: self.pos
@@ -160,7 +171,7 @@
             text_color: 1, 1, 1, 1
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 
                 RoundedRectangle:
                     pos: self.pos
@@ -185,7 +196,7 @@
             text_color: 1, 1, 1, 1
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 
                 RoundedRectangle:
                     pos: self.pos
@@ -210,7 +221,7 @@
             text_color: 1, 1, 1, 1
             canvas.before:
                 Color:
-                    rgba: 0.42, 0.25, 0.73, 1
+                    rgba: 0.08, 0.38, 0.9, 1
                 
                 RoundedRectangle:
                     pos: self.pos
