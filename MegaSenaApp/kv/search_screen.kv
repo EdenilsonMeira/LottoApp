@@ -1,14 +1,73 @@
 <SearchScreen>:
 
-    MDBoxLayout:
-        orientation: "vertical"
-        padding: 20
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "assets/Background.png"
 
-        MDLabel:
-            text: "Página de Busca"
-            halign: "center"
-            font_style: "H5"
+    FloatLayout:
 
+        # 🔵 TOP CONTENT
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: 20, 20, 20, 20
+            spacing: 20
+            size_hint: 1, None
+            height: self.minimum_height
+            pos_hint: {"top": 1}
+
+            Image:
+                source: "assets/pesquisa.png"
+                size_hint_y: None
+                height: 180
+                allow_stretch: True
+                keep_ratio: True
+
+            Widget:
+                size_hint_y: None
+                height: 20
+
+
+        # 🔵 LEFT BUTTON
         MDRaisedButton:
-            text: "Voltar"
-            on_release: app.root.current = "main"
+            text: "Gerar Números"
+            font_size: 48
+            size_hint: None, None
+            size: 250, 80
+            pos_hint: {"x": 0.05, "y": 0.05}
+            elevation: 0
+            on_release: root.manager.current = "main"
+
+            md_bg_color: 0, 0, 0, 0
+            text_color: 1, 1, 1, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0.42, 0.25, 0.73, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
+
+
+        # 🔵 RIGHT BUTTON
+        MDRaisedButton:
+            text: "Estatísticas"
+            font_size: 48
+            size_hint: None, None
+            size: 250, 80
+            pos_hint: {"right": 0.95, "y": 0.05}
+            elevation: 0
+            on_release: root.manager.current = "stats"
+
+            md_bg_color: 0, 0, 0, 0
+            text_color: 1, 1, 1, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0.42, 0.25, 0.73, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [45]
