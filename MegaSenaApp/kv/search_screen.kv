@@ -22,7 +22,7 @@
         Image:
             source: "assets/pesquisa.png"
             size_hint_y: None
-            height: 180
+            height: 250
             allow_stretch: True
             keep_ratio: True
 
@@ -93,23 +93,23 @@
                 hint_text: "XX XX XX XX XX XX"  
 
         # Second card
-        MDCard:
-            size_hint: 0.9, None
-            height: 380
-            pos_hint: {"center_x": 0.5}
-            md_bg_color: 1, 1, 1, 1
-            elevation: 2
+        # MDCard:
+        #     size_hint: 0.9, None
+        #     height: 380
+        #     pos_hint: {"center_x": 0.5}
+        #     md_bg_color: 1, 1, 1, 1
+        #     elevation: 2
         
-        #Include another boxlayout here
-        ########
+        # #Include another boxlayout here
+        # ########
         
-        # Third card
-        MDCard:
-            size_hint: 0.9, None
-            height: 380
-            pos_hint: {"center_x": 0.5}
-            md_bg_color: 1, 1, 1, 1
-            elevation: 2
+        # # Third card
+        # MDCard:
+        #     size_hint: 0.9, None
+        #     height: 380
+        #     pos_hint: {"center_x": 0.5}
+        #     md_bg_color: 1, 1, 1, 1
+        #     elevation: 2
         
         #Include another boxlayout here
         ########
@@ -118,8 +118,27 @@
     # Buttons
     BoxLayout:
         orientation: "vertical"
+        padding: [40, 0, 40, 0]   # left, top, right, bottom
+    
+        Widget:
+
+        MDLabel:
+            id: result_label
+            text: ""
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: "center"
+            valign: "middle"
+            text_size: self.width, None
+            theme_text_color: "Primary"
+        
+        Widget:
+        
+    BoxLayout:
+        orientation: "vertical"
         padding: 350
         
+
         # Search Button (overlapping the cards)     
         MDRaisedButton:
             text: "Pesquisar"
@@ -128,7 +147,7 @@
             size: 250,80
             # pos_hint: {"x": 0.05, "y": 0.05}
             elevation: 0
-            on_release: root.manager.current = "main"
+            on_release: root.text_display_search()
 
             md_bg_color: 0, 0, 0, 0
             text_color: 1, 1, 1, 1
